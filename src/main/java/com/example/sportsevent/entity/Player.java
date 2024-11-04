@@ -1,6 +1,7 @@
 package com.example.sportsevent.entity;
 
 import com.example.sportsevent.enumerated.Position;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -16,6 +17,7 @@ public class Player {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "teamid")
+	@JsonIgnore
 	private Team team;
 
 	@Enumerated(EnumType.STRING)
